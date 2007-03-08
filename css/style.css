@@ -1,0 +1,129 @@
+@font-face {
+  font-family: Bernardo Moda contrast;
+  src: url(Bernardo Moda contrast.ttf);
+}
+
+h1{ 
+	font-family: Bernardo Moda contrast; 
+	font-size: 50px;
+	margin-left: 120px;
+}
+
+h3{ 
+	font-family: Bernardo Moda contrast; 
+	font-size: 30px;
+}
+body{
+
+	padding-top:40px;
+	background-size:cover;
+
+}
+
+#contenedor{
+	width: 1200px;
+	background: red;
+
+}
+
+header{
+	width: 1000px;
+	margin: auto;
+	background: #fff;
+	border-radius: 10px;
+	padding-right: 10px;
+	padding-left: 10px;
+	padding-top:5px;
+	padding-bottom: 5px;
+}
+
+nav {
+	margin: auto;
+	width: 1000px;
+}
+
+nav ul {
+	display: inline;
+}
+
+section{
+	padding: 40px;
+	width: 1000px;
+    background: #fff;
+    margin: auto;
+    margin-top: 10px;
+    border-radius: 10px;
+
+
+}
+
+article {
+	margin-left: 200px;
+
+}
+
+  
+hgroup font{
+
+    font-size-adjust: 1;
+    color: black;
+
+}
+
+form div{
+	margin:20px;
+}
+
+label{
+	float: left;
+	width: 90px;
+	text-align: left;
+	font-family: arial; 
+	font-size: 15px;
+	margin-right: 10px;
+}
+
+font{
+
+    font-size-adjust: 0.4;
+    color: black;
+    text-shadow: -5px -5px 5px #aaa;
+}
+
+#logo, #logo2{
+	width: 120px;
+	display: inline;
+}
+
+#logo1{
+
+	width: 500px;
+	opacity: .8;
+}
+
+#logo2{
+	margin-left: 350px;
+
+}
+
+fieldset{
+	width: 450px;
+	margin: auto;
+	margin-top: 5px;
+
+}
+
+
+div .mision h4{
+	font-family: Bernardo Moda contrast; 
+	font-size: 25px;
+	margin-right: 500px;
+	float: right;
+}
+
+div .vision h4{
+	font-family: Bernardo Moda contrast; 
+	font-size: 25px;	
+	margin-left: 500px;  
+}
+
