@@ -9,8 +9,8 @@
         </li>
         <li><span class="a">Prestamo</span>
             <ul class="submenu">
-                <li><a href="registro_prestamo">Registrar</a></li>
-                <li><a href="registro_devolucion">Devolución</a></li>
+                <li><a href="registro_prestamo.php">Registrar</a></li>
+                <li><a href="registro_devolucion.php">Devolución</a></li>
                </li>
             </ul>
         </li>
