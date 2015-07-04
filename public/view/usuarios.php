@@ -17,7 +17,7 @@
 	<script src="../assets/js/jquery-1.11.3.min.js"></script>
 	<script src="../assets/js/bootstrap.min.js"></script>
 </head> 
-<body  background="../assets/imagen/fondo.jpeg">
+<body>
 	<div class="container-fluid">
       		<header>
         			<?php require_once ('../include/header.php');?>
@@ -47,7 +47,7 @@
 
 						<div>
 					      		<label for="tu">Tipo de Usuario</label>
-					               	<select id="tu" class="form-control input-sm" name="tipo" required> 
+					               	<select id="tu" class="form-control input-sm tu" name="tipo" required> 
 					                		<option value="0">Seleccione</option>
 					                		<?php 
 					                			require_once ('../../consultas/conexion.php');

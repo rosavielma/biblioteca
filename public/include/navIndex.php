@@ -3,8 +3,7 @@
         <li><span class="a">Ingresar</span>
             <ul class="submenu">
                 <li><a href="public/view/usuarios.php">Usuario</a></li>
-                <li><a href="public/view/libros.php">Texto</a></li>
-                <li><a href="public/view/material.php">Material</a></li>
+                <li><a href="public/view/texto.php">Texto</a></li>
             </ul>
         </li>
         <li><span class="a">Prestamo</span>

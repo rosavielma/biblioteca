@@ -1,6 +1,11 @@
-#tu{
+.tu{
 	width: 377px;
 	display: inline;
+}
+
+.yo{
+	width: 495px;
+	display: inline;	
 }
 
 .boton{

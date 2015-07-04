@@ -12,7 +12,7 @@
 	<link rel="stylesheet" type="text/css" href="public/assets/css/style.css">
 	<link rel="stylesheet" type="text/css" href="public/assets/css/main.css">
 </head> 
-<body  background="public/assets/imagen/fondo.jpeg"> 
+<body> 
 	<div class="containerfluid">
     		<header>
 			<img id="logo1" src="public/assets/imagen/membrete.jpeg">
@@ -26,14 +26,14 @@
 
 		<section>
 			<article class="mision">
-	        			<strong> MISION: </strong> 
+	        			<h3>MISION</h3>
 	        			<p>
 	        				La Escuela Básica “Campo Elías” permite la participación de todos los entes 
 	         				de la colectividad ejidense Promueve la preservación de los espacios ecológicos
 	         			</p>
 	        		</article>
 	    		<article class="vision">
-				<strong> VISION: </strong> 
+				<h3>VISION</h3>
 	        			<p>
 	        				La Escuela Básica “Campo Elías” es un ente formador y orientador del proceso
 	        				socializador del Sistema Educativo Bolivariano impartiendo conocimientos hacia
