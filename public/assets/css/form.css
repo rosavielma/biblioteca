@@ -1,33 +1,19 @@
-div input, div select{
-	width:150px;
-	padding:2px 5px 2px 5px;
+#tu{
+	width: 377px;
+	display: inline;
 }
 
-
-form div{
-	margin:20px;
-}
-
-label{
+.boton{
 	float: left;
-	width: 140px;
-	text-align: left;
+	width: 225px;
 }
 
-legend{
-	font-family: Bernardo Moda contrast; 
-	font-size: 30px;
-	margin-right: 20px;
+section article fieldset form  span input[type=reset]{
+	margin: 0px 42px 0px 62px ;
+	width:120px;
 }
 
-#btn{
-	float:right;
+section article fieldset form  span input[type=submit]{
+	margin: 0px 62px 0px 42px ;
+	width:120px;
 }
-
-fieldset{
-	width: 400px;
-	margin-right: 250px;
-	margin-top: 5px;
-
-}
-
