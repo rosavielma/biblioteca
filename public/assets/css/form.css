@@ -1,0 +1,33 @@
+div input, div select{
+	width:150px;
+	padding:2px 5px 2px 5px;
+}
+
+
+form div{
+	margin:20px;
+}
+
+label{
+	float: left;
+	width: 140px;
+	text-align: left;
+}
+
+legend{
+	font-family: Bernardo Moda contrast; 
+	font-size: 30px;
+	margin-right: 20px;
+}
+
+#btn{
+	float:right;
+}
+
+fieldset{
+	width: 400px;
+	margin-right: 250px;
+	margin-top: 5px;
+
+}
+
