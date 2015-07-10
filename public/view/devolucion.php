@@ -29,23 +29,17 @@
             <legend>Registro de Devolución</legend>
              <form action="../../consultas/devolucion/insertar.php" method="POST" >
 
-
             <div>
-                <label for="codi">Cédula Usuario:</label>
-                <input id="codi" class="form-control input-sm" type="text" name="id" value="" placeholder="Ingrese el Código" required>
-            </div>
-            <div>
-                <label for="Descri">Código del Material:       </label>
-                <input id="Descri" class="form-control input-sm" type="text" name="prestamo" value="" placeholder="Ingrese la Descipcion"> 
-            </div>
-
-             <div>
-                <label for="Descri">Fecha de Entrega:</label>
-                <input id="Descri" class="form-control input-sm" type="date" name="fechaEntrega" value="" placeholder="Ingrese la Descipcion"> 
-            </div> 
+                    <label for="codi">Cedula Usuario</label>
+               <input id="codi" class="form-control input-sm tu" type="text" name="id" value="" placeholder="Ingrese la Cedula" required>
+  
+                          <a id="mas" class="btn btn-default btn-sm" href="#">
+                    <span class="glyphicon glyphicon -search"></span>
+                </a> 
+                    </div>
 
            <div id="btn">
-                <input class="btn btn-primary" type="submit" value="Registrar">
+                <input class="btn btn-primary" type="submit" value="Buscar">
            </div>
         </form>
         </fieldset>

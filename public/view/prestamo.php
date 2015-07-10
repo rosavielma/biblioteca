@@ -27,18 +27,26 @@
         <article>
         <fieldset>
             <legend>Registro de Prestamo</legend>
-             <form action="../../consultas/prestamo/insertar.php" method="POST" >
+             <form action="../../consultas/prestamo/insertar.php" method="POST" autocomplete="off">
 
 
             <div>
-                <label for="codi">Cédula Usuario:</label>
-                <input id="codi" class="form-control input-sm" type="text" name="usuario" value="" placeholder="Ingrese el Código" required>
-            </div>
-            <div>
-                <label for="Descri">Código del Material:       </label>
-                <input id="Descri" class="form-control input-sm" type="text" name="cota" value="" placeholder="Ingrese la Descipcion"> 
-            </div>
+                    <label for="codi">Cedula Usuario</label>
+               <input id="codi" class="form-control input-sm tu" type="text" name="usuario" value="" placeholder="Ingrese la Cedula" required>
+  
+                          <a id="mas" class="btn btn-default btn-sm" href="usuarios.php">
+                    <span class="glyphicon glyphicon-plus"></span>
+                </a> 
+                    </div>
 
+        <div>
+                    <label for="codi">Código del Material</label>
+               <input id="codi" class="form-control input-sm tu" type="text" name="cota" value="" placeholder="Ingrese la Cedula" required>
+  
+                          <a id="mas" class="btn btn-default btn-sm" href="texto.php" >
+                    <span class="glyphicon glyphicon-plus"></span>
+                </a> 
+                    </div>
 
             <div>
                 <label for="Descri">Fecha de Préstamo:</label>
