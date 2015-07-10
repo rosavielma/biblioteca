@@ -1,8 +1,7 @@
 <?php 
 require_once '../conexion.php';
-
 extract($_POST);
-$sql = "INSERT INTO autor (id, nombre, editorial) VALUES (NULL, '$nombre', '$editorial')";
+$sql = "INSERT INTO editorial (id, nombre) VALUES (NULL, '$nombre')";
 $res = mysqli_query($conexion, $sql);
 if ($res) { ?>
 	<script>

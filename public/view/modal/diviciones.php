@@ -9,7 +9,7 @@
             		<div class="modal-body">
             			<form action="../../consultas/divisiones/insertar.php" method="POST">
 					<div>
-					        	<label for="codigo">Codigo</label>
+					        	<label for="codigo">Cota</label>
 					         	<input id="codigo" class="form-control input-sm" type="number" min="0" name="id" value="" placeholder="Ingrese Codigo" title=""> 
 					</div>
 

@@ -47,17 +47,44 @@
             					</div>          					
 
               					<div class="edicion">
-             						<label for="edicion">edicion</label>
+             						<label for="edicion">Edicion</label>
                						<input id="edicion" class="form-control input-sm" type="number" min="0" name="numEdicion" value=""> 
             					</div> 
 
-         						<div>
-                						<label for="autor">Autor</label>
-                						<input id="autor" class="form-control input-sm tu" type="text" name="autor" value="" placeholder="Ingrese el Autor"> 
-                						<button id="mas" class="btn btn-default btn-sm" href="#Autor" type="button"  data-toggle="modal">
+						<div>
+					      		<label for="c">Editorial</label>
+					               	<select id="c" class="form-control input-sm tu" name="editorial" required> 
+					                		<option value="0">Seleccione</option>
+					                		<?php 
+					                			require_once ('../../consultas/conexion.php');
+					                			$sql = "SELECT * FROM editorial";
+					                			$res = mysqli_query($conexion, $sql);
+					                			while ($row = mysqli_fetch_array($res)) {?>
+					                				<option value="<?= $row[0] ?>"><?= $row[1] ?></option>	
+					                			<?php } ?>
+					              	</select>
+					              	<button id="mas" class="btn btn-default btn-sm" href="#editorial" type="button"  data-toggle="modal">
 				    				<span class="glyphicon glyphicon-plus"></span>
-				  			</button>
-           					</div>            					
+				  			</button> 
+					          </div>
+
+						<div>
+					      		<label for="c">Autor</label>
+					               	<select id="c" class="form-control input-sm tu" name="autor" required> 
+					                		<option value="0">Seleccione</option>
+					                		<?php 
+					                			require_once ('../../consultas/conexion.php');
+					                			$sql = "SELECT * FROM autor";
+					                			$res = mysqli_query($conexion, $sql);
+					                			while ($row = mysqli_fetch_array($res)) {?>
+					                				<option value="<?= $row[0] ?>"><?= $row[1] ?></option>	
+					                			<?php } ?>
+					              	</select>
+					              	<button id="mas" class="btn btn-default btn-sm" href="#Autor" type="button"  data-toggle="modal">
+				    				<span class="glyphicon glyphicon-plus"></span>
+				  			</button> 
+					          </div>
+           					
 
 						<div>
 					      		<label for="c">Categoria</label>
@@ -89,23 +116,6 @@
 					                			<?php } ?>
 					              	</select>
 					              	<button id="mas" class="btn btn-default btn-sm" href="#diviciones" type="button"  data-toggle="modal">
-				    				<span class="glyphicon glyphicon-plus"></span>
-				  			</button> 
-					          </div>
-
-					          <div>
-					      		<label for="sub">Subdivisiones</label>
-					               	<select id="sub" class="form-control input-sm tu" name="tipo" required> 
-					                		<option value="0">Seleccione</option>
-					                		<?php 
-					                			require_once ('../../consultas/conexion.php');
-					                			$sql = "SELECT * FROM subdivisiones";
-					                			$res = mysqli_query($conexion, $sql);
-					                			while ($row = mysqli_fetch_array($res)) {?>
-					                				<option value="<?= $row[0] ?>"><?= $row[1] ?></option>	
-					                			<?php } ?>
-					              	</select>
-					              	<button id="mas" class="btn btn-default btn-sm" href="#subdivisiones" type="button"  data-toggle="modal">
 				    				<span class="glyphicon glyphicon-plus"></span>
 				  			</button> 
 					          </div>
@@ -146,8 +156,8 @@
 </html>
 <?php 
 	require_once'modal/autor.php'; 
+	require_once'modal/editorial.php'; 
 	require_once'modal/categoria.php'; 
-	require_once'modal/diviciones.php'; 
-	require_once'modal/subdivisiones.php'; 
+	require_once'modal/diviciones.php';
 	require_once'modal/grado.php'; 
 ?>

@@ -1,6 +1,6 @@
 <?php   
     session_start();
-    if (!isset($_SESSION['s_usuario'])) { header("location: public/view/login.php"); }
+    if (!isset($_SESSION['s_usuario'])) { header("location: ../view/login.php"); }
 ?>
 
 <!DOCTYPE html>
@@ -31,8 +31,8 @@
             				<legend>Registro de Usuario</legend>
         					<form action="../../consultas/usuario/insertar.php" method="POST" >
 					       	<div>
-					          	<label for="ci">Cedula</label>
-					                	<input id="ci" class="form-control input-sm" type="number" min="1000000"  max="100000000" name="cedula" value="" placeholder="Ingrese Cedula" required>
+			<label for="cedula">Cedula</label>
+			<input id="cedula" class="form-control input-sm" type="number" min="1000000"  max="100000000" name="cedula" value="" placeholder="Ingrese Cedula" required>
 					          </div>
 
 					       	<div>
@@ -51,9 +51,9 @@
 					                		<option value="0">Seleccione</option>
 					                		<?php 
 					                			require_once ('../../consultas/conexion.php');
-					                			$sql = "SELECT * FROM tipo_usuario";
-					                			$res = mysqli_query($conexion, $sql);
-					                			while ($row = mysqli_fetch_array($res)) {?>
+					$sql = "SELECT * FROM tipo_usuario";
+					$res = mysqli_query($conexion, $sql);
+				        while ($row = mysqli_fetch_array($res)) {?>
 					                				<option value="<?= $row[0] ?>"><?= $row[1] ?></option>	
 					                			<?php } ?>
 					              	</select>

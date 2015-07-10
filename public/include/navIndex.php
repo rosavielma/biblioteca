@@ -1,4 +1,4 @@
-	<ul class="menu">
+    <ul class="menu">
         <li><a href="">Inicio</a></li>
         <li><span class="a">Ingresar</span>
             <ul class="submenu">
@@ -16,7 +16,7 @@
 
         <li><span class="a">Consulta</span>
             <ul class="submenu">
-                <li><a href="consulta_usuario">Usuario</a></li>
+                <li><a href="../view/consultar.php">Usuario</a></li>
                 <li><a href="consulta_texto">Texto</a></li>
                 <li><a href="consulta_materia">Material</a></li>
                 <li><a href="consulta_prestamo">Prestamo</a></li>
