@@ -8,6 +8,7 @@
     <link rel="stylesheet" type="text/css" href="../assets/css/style.css">
     <link rel="stylesheet" type="text/css" href="../assets/css/main.css">
     <link rel="stylesheet" type="text/css" href="../assets/css/form.css">
+    <link rel="stylesheet" type="text/css" href="../assets/css/font-awesome.min.css">   
 
   <script src="../assets/js/jquery-1.11.3.min.js"></script>
   <script src="../assets/js/bootstrap.min.js"></script>
@@ -31,10 +32,11 @@
 
             <div>
                     <label for="codi">Cedula Usuario</label>
-               <input id="codi" class="form-control input-sm tu" type="text" name="id" value="" placeholder="Ingrese la Cedula" required>
+               <input id="codi" class="form-control input-sm tu" type="text" name="id" value=""
+                placeholder="Ingrese la Cedula" required autocomplete="off">
   
                           <a id="mas" class="btn btn-default btn-sm" href="#">
-                    <span class="glyphicon glyphicon -search"></span>
+                    <span class="icon-facebook"></span>
                 </a> 
                     </div>
 
