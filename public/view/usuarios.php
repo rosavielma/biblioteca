@@ -1,6 +1,15 @@
 <?php   
     session_start();
     if (!isset($_SESSION['s_usuario'])) { header("location: ../view/login.php"); }
+    if (isset($_REQUEST["cedula"]))
+    	
+    {
+     require_once '../../consultas/conexion.php';
+     extract($_REQUEST);
+     $sql = "SELECT * FROM usuario WHERE cedula = $cedula";
+     $res = mysqli_query($conexion, $sql); 
+     $resul= mysqli_fetch_assoc($res);    			
+    }
 ?>
 
 <!DOCTYPE html>
@@ -28,37 +37,42 @@
       		<section>
         			<article>
         				<fieldset>
-            				<legend>Registro de Usuario</legend>
-        					<form action="../../consultas/usuario/insertar.php" method="POST" >
+            				<legend>
+            					<?= (isset($cedula) ? 'Edicion' : 'Registro') ?> de Usuario
+            				</legend>
+        					<form action="../../consultas/usuario/<?= (isset($cedula) ? 'modificar.php' : 'insertar.php') ?>" method="POST" >
 					       	<div>
-			<label for="cedula">Cedula</label>
-			<input id="cedula" class="form-control input-sm" type="number" min="1000000"  max="100000000" name="cedula" value="" placeholder="Ingrese Cedula" required>
+			<label            for="cedula">Cedula</label>
+			<input            id="cedula" class="form-control input-sm" type="number" min="1000000" max="100000000" name="cedula" value="<?= (isset($cedula) ? $resul['cedula'] : '') ?>" placeholder="Ingrese Cedula" required>
 					          </div>
 
 					       	<div>
 					                	<label for="nombre">Nombre</label>
-					                	<input id="nombre" class="form-control input-sm" type="text" name="nombre" value="" placeholder="Ingrese Nombre" title="" required> 
+					                	<input id="nombre" class="form-control input-sm" type="text" name="nombre" value="<?= (isset($cedula) ? $resul['nombre'] : '') ?>" placeholder="Ingrese Nombre" title="" required> 
 					          </div>
 
 					       	<div>
                 						<label for="apellido">Apellido</label>
-                						<input id="apellido" class="form-control input-sm" type="text" name="apellido" value="" placeholder="Ingrese su Apellido" required> 
+                						<input id="apellido" class="form-control input-sm" type="text" name="apellido" value="<?= (isset($cedula) ? $resul['apellido'] : '') ?>" placeholder="Ingrese su Apellido" required> 
             					</div>
 
 						<div>
 					      		<label for="tu">Tipo de Usuario</label>
-					               	<select id="tu" class="form-control input-sm tu" name="tipo" required> 
+					               	<select id="tu" class="form-control input-sm <?= (isset($cedula) ? '' : 'tu') ?> " name="tipo" required> 
 					                		<option value="0">Seleccione</option>
 					                		<?php 
 					                			require_once ('../../consultas/conexion.php');
 					$sql = "SELECT * FROM tipo_usuario";
 					$res = mysqli_query($conexion, $sql);
 				        while ($row = mysqli_fetch_array($res)) {?>
-					                				<option value="<?= $row[0] ?>"><?= $row[1] ?></option>	
+					                				<option value="<?= $row[0] ?> "<?= ( ((isset($cedula)) && $resul['tipo'] == $row[0]) ? 'selected' : '') ?> > <?= $row[1] ?></option>	
 					                			<?php } ?>
 					              	</select>
-					              	<button id="mas" class="btn btn-default btn-sm" href="#Edificio" type="button"  data-toggle="modal">
-				    				<span class="glyphicon glyphicon-plus"></span>
+					              	<?php if(!isset($cedula)) { ?>
+					              		<button id="mas" class="btn btn-default btn-sm" href="#Edificio" type="button"  data-toggle="modal">
+				    					<span class="glyphicon glyphicon-plus"></span>
+					              	<?php } ?>
+					              	
 				  			</button> 
 					          </div>
 
@@ -67,7 +81,10 @@
 					          </span>
 					           	
 					          <span class="boton">
-					          	<input class="btn btn-primary btn-sm" type="submit" value="Registrar">
+					           <?php if(isset($cedula)) { ?>
+					            <input type="hidden" name= "civ" value= "<?= $cedula ?>">  	
+					            <?php } ?>
+					          	<input class="btn btn-primary btn-sm" type="submit" value="<?= (isset($cedula) ? 'Editar' : 'Registrar') ?>">
 					          </span>
         					</form>
         				</fieldset>

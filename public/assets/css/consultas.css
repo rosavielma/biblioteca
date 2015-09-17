@@ -1,0 +1,22 @@
+table{
+	margin: auto;
+	border: 2px solid #000;
+}
+
+table caption {
+	text-align: center;
+	color: #000;
+	font-weight: bold;
+	font-size: 1.3em;
+}
+
+table tr th{
+	width: 200px;
+	text-align: center;
+	border: 2px solid #000;
+}
+
+td{
+	text-align: center;
+	border: 2px solid #000;
+}

@@ -7,7 +7,7 @@
 <html> 
 <head> 
 	<meta charset="UTF-8">
-	<title>Prueba de Bootstrap</title> 
+	<title>Menu del Sistema</title> 
 	<link rel="stylesheet" type="text/css" href="public/assets/css/bootstrap.min.css">
 	<link rel="stylesheet" type="text/css" href="public/assets/css/style.css">
 	<link rel="stylesheet" type="text/css" href="public/assets/css/main.css">
@@ -16,7 +16,6 @@
 	<div class="containerfluid">
     		<header>
 			<img id="logo1" src="public/assets/imagen/membrete.jpeg">
-			<span>   </span>
 			<img id="logo2" src="public/assets/imagen/logo.png">
     		</header>
 

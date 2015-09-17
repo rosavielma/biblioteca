@@ -16,10 +16,9 @@
 
         <li><span class="a">Consulta</span>
             <ul class="submenu">
-                <li><a href="../view/consultar.php">Usuario</a></li>
-                <li><a href="consulta_texto">Texto</a></li>
-                <li><a href="consulta_materia">Material</a></li>
-                <li><a href="consulta_prestamo">Prestamo</a></li>
+                <li><a href="public/view/conUsuarios.php">Usuario</a></li>
+                <li><a href="public/view/conTexto.php">Texto</a></li>
+                <li><a href="public/view/conPrestamo.php">Prestamo</a></li>
                 <li><a href="consulta_devolución">Devolución</a></li>
 
                </li>

@@ -1,4 +1,3 @@
-
 <?php
 
 session_start();
@@ -9,20 +8,20 @@ if (isset($_POST["MM_login"]))
   $sql = "SELECT * FROM admin where usuario = '$usuario'";
   $res = mysqli_query($conexion, $sql);
   $row = mysqli_fetch_assoc($res);
-  //print_r($row);
+
   if ($password == "" || $usuario == "") {?>
     <script>
-    alert("pass");
+    alert("Campos Vacíos");
     </script>
   <?php }
   else if($usuario != $row['usuario']){ ?>
     <script>
-    alert("usuario");
+    alert("usuario incorrecto");
     </script>
   <?php }
   else if($password != $row['password']){ ?>
     <script>
-    alert("password");
+    alert("password incorrecto");
     </script>
   <?php }
   else{
@@ -47,7 +46,6 @@ if (isset($_POST["MM_login"]))
         <?php require_once ('../include/header.php');?>
       </header>
 
-        </footer>
         <section>
           <article>
              <hgroup>
@@ -70,14 +68,12 @@ if (isset($_POST["MM_login"]))
                         
                         <div>
                             <input class="btn btn-primary" type="submit" value="Ingresar">
-          <input class="btn btn-primary" type="submit" value="Ingresar">
+
                         </div>
                     </form>
                 </fieldset>
             </article>
         </section>
-        <footer>
     </div>
 </body> 
 </html>
-

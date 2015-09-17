@@ -5,13 +5,13 @@ $sql = "INSERT INTO usuario (cedula, nombre, apellido, tipo) VALUES ($cedula, '$
 $res = mysqli_query($conexion, $sql);
 if ($res) { ?>
 	<script>
-		alert('=)');
+		alert('Datos ingresado correctamente');
 		window.location='../../public/view/usuarios.php';
 	</script>
 <?php }
 else{ ?>
 	<script>
-		alert('=(');
+		alert('Error, no se logro guardar los datos');
 		window.location='../../public/view/usuarios.php';
 	</script>
 <?php } ?>
