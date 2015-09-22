@@ -1,4 +1,4 @@
-/* estilos generales */
+                               /* estilos generales */
 nav{
     margin-top: 10px;  /* espacio entre el header y el nav */
     background: linear-gradient(rgb(255, 255, 255), rgb(204, 204, 204)); /*generador de degradado gris*/
@@ -14,66 +14,61 @@ nav{
 }
 
 .menu li {
-    background: -webkit-linear-gradient(rgb(255, 255, 255), rgb(204, 204, 204));
-    background: -o-linear-gradient(rgb(255, 255, 255), rgb(204, 204, 204));
-    background: linear-gradient(rgb(255, 255, 255), rgb(204, 204, 204));
+    background: -webkit-linear-gradient(rgb(255, 255, 255), rgb(204, 204, 204));/*Color gris de la lista desplegable*/
+    background: linear-gradient(rgb(204, 204, 204));  /*Color gris del menu nav*/
 }
 
 .menu >li:first-child {
-    border-radius: 10px 0px 0px 10px;
+    border-radius: 10px 0px 0px 10px;  /*tamaño del borde del menu de nav a la izquierda*/
 }
 
 .menu >li:last-child {
-    border-radius: 0px 10px 10px 0px;
+    border-radius: 0px 10px 10px 0px;  /*tamaño del borde del menu de nav a la derecha*/
 }
 
 .menu > li {
-    display: inline-block;
-    position: relative;
-    width: 139.4px;
-    text-align: center;
+    display: inline-block;    /*posicion horizontal del menu nav*/
+    position: relative;   /*coloca la lista desplegable debjo del nav,else lo colok a la izquierda*/
+    width: 170px;           /*tamaño horizontal de cada campo del menu nav*/
+    text-align: center;       /*el texto del nav centrad*/
 }
 .menu > li:nth-child(6){
-    width: 164px;
+    width: 164px;             /*tamaño horizontal del campo herramientas del nav*/
 }
 
 .menu > li:last-child {
-    width: 115px;
+    width: 130px;             /*tamaño horizontal del campo salir del nav*/
 }
 
 .menu a, .a{
-    color: #000;
-    display: block;
-    font-family: 'Lucida Console';
-    font-size: 18px;
-    text-transform: uppercase;
+    color: #000;                      /*color de la letra de los campos del nav*/
+    display: block;       /*coloca la lista desplegable debjo del nav,else lo colok encima del nav*/
+    font-family: 'Lucida Console';   /*tipo de letra de los campos del nav*/
+    font-size: 18px;                 /*tamaño de letra de los campos del nav*/
+    text-transform: uppercase;     /*tranforma (minuscula-mayuscula) letra de los campos del nav*/
 }
 
 .submenu li{
-    width: 139.4px;
-    text-align: center;
+    width: 170px;              /*tamaño horizontal de la lista desplegable*/
+    text-align: center;          /*texto centrado de la lista desplegable*/
 }
 
-.submenu li> ul li> a{
-    width: 139.4px;
-    text-align: center;
-}
 
 .submenu li:last-child{
-    border-radius: 0px 0px 10px 10px;
+    border-radius: 0px 0px 10px 10px;  /*tamaño del borde de la lista desplegable*/
 }
 
 .menu > li:nth-child(6) .submenu li{
-    width: 164px;
+    width: 164px;                     /*tamaño horizontal de la lista desplegable dl herramientas*/
 }
+
 /* onhover styles */
 .menu li:hover {
-    color: #000;
-    background: #353535;
+    background: #48D1CC;  /*color dl campo dl nav, y en la lista al pasr el cursor*/
 }
 
 .menu li:hover > a{
-    color: #fff;
+    color: black;        /*color de la letra en la lista desplegable al pasr el cursor*/
 }
 
 /* submenu styles */
@@ -85,7 +80,7 @@ nav{
     -moz-perspective: 400px;
     -ms-perspective: 400px;
     -o-perspective: 400px;
-    perspective: 400px;
+    perspective: 400px;      /*entra desde la izquierda hacia adentro */ 
 }
 
 .submenu li {
@@ -94,23 +89,25 @@ nav{
     -moz-transform: rotateY(90deg);
     -ms-transform: rotateY(90deg);
     -o-transform: rotateY(90deg);
-    transform: rotateY(90deg);
+    transform: rotateY(90deg);                          /*rotacion de la lista*/
     -webkit-transition: opacity .4s, -webkit-transform .5s;
     -moz-transition: opacity .4s, -moz-transform .5s;
     -ms-transition: opacity .4s, -ms-transform .5s;
     -o-transition: opacity .4s, -o-transform .5s;
-    transition: opacity .4s, transform .5s;
+    transition: opacity .4s, transform .5s;           /*transicion de la lista*/
 }
 
-
-
+  /* NO SEEE --> */
+ 
 .menu > li:hover .submenu, .menu > li:focus .submenu {
     max-height: 1000px;
     z-index: 100;
 }
 
+
+/* FALTA A PARTIR DE AQUI --> */
 .menu > li:hover .submenu li, .menu > li:focus .submenu li {
-    opacity: 1;
+    opacity: 1;                   /*para que salga el menu de abajo --> */
     -webkit-transform: none;
     -moz-transform: none;
     -ms-transform: none;
@@ -119,60 +116,55 @@ nav{
 }
 
 /* CSS3 delays for transition effects */
+
 .menu li:hover .submenu li:nth-child(1) {
     -webkit-transition-delay: 0s;
     -moz-transition-delay: 0s;
     -ms-transition-delay: 0s;
     -o-transition-delay: 0s;
-    transition-delay: 0s;
+    transition-delay: 0s;      /*seg q tarda el 1er campo d la lista, entre ms seg no aparec*/
 }
 .menu li:hover .submenu li:nth-child(2) {
     -webkit-transition-delay: 50ms;
     -moz-transition-delay: 50ms;
     -ms-transition-delay: 50ms;
     -o-transition-delay: 50ms;
-    transition-delay: 50ms;
+    transition-delay: 50ms;       /*seg q tarda el 2do campo d la lista, entre ms seg no aparec*/
 }
 .menu li:hover .submenu li:nth-child(3) {
     -webkit-transition-delay: 100ms;
     -moz-transition-delay: 100ms;
     -ms-transition-delay: 100ms;
     -o-transition-delay: 100ms;
-    transition-delay: 100ms;
+    transition-delay: 100ms;      /*seg q tarda el 3er campo d la lista, entre ms seg no aparec*/
 }
-.menu li:hover .submenu li:nth-child(4) {
-    -webkit-transition-delay: 150ms;
-    -moz-transition-delay: 150ms;
-    -ms-transition-delay: 150ms;
-    -o-transition-delay: 150ms;
-    transition-delay: 150ms;
-}
+
 
 .submenu li:nth-child(1) {
     -webkit-transition-delay: 350ms;
     -moz-transition-delay: 350ms;
     -ms-transition-delay: 350ms;
     -o-transition-delay: 350ms;
-    transition-delay: 350ms;
+    transition-delay: 350ms;    /*seg q tarda el 1er d la lista, en desaparecer*/
 }
 .submenu li:nth-child(2) {
     -webkit-transition-delay: 300ms;
     -moz-transition-delay: 300ms;
     -ms-transition-delay: 300ms;
     -o-transition-delay: 300ms;
-    transition-delay: 300ms;
+    transition-delay: 300ms;     /*seg q tarda el 2do d la lista, en desaparecer*/
 }
 .submenu li:nth-child(3) {
     -webkit-transition-delay: 250ms;
     -moz-transition-delay: 250ms;
     -ms-transition-delay: 250ms;
     -o-transition-delay: 250ms;
-    transition-delay: 250ms;
+    transition-delay: 250ms;      /*seg q tarda el 3ero d la lista, en desaparecer*/
 }
 .submenu li:nth-child(4) {
     -webkit-transition-delay: 200ms;
     -moz-transition-delay: 200ms;
     -ms-transition-delay: 200ms;
     -o-transition-delay: 200ms;
-    transition-delay: 200ms;
+    transition-delay: 200ms;      /*seg q tarda el 4to d la lista,en aparecer y desaparecer*/
 }

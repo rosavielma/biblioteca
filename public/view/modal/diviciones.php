@@ -8,11 +8,11 @@
             		</div>
             		<div class="modal-body">
             			<form action="../../consultas/divisiones/insertar.php" method="POST">
+
 					<div>
-					        	<label for="codigo">Cota</label>
+					        	<label for="codigo">Codigo</label>
 					         	<input id="codigo" class="form-control input-sm" type="number" min="0" name="id" value="" placeholder="Ingrese Codigo" title=""> 
 					</div>
-
             				<div>
 					        	<label for="nombre">Nombre</label>
 					         	<input id="nombre" class="form-control input-sm" type="text" name="nombre" value="" placeholder="Ingrese Nombre" title=""> 

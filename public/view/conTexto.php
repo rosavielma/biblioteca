@@ -1,3 +1,17 @@
+<?php   
+    session_start();
+    if (!isset($_SESSION['s_usuario'])) { header("location: ../view/login.php"); }
+    if (isset($_REQUEST["cota"]))
+      
+    {
+     require_once '../../consultas/conexion.php';
+     extract($_REQUEST);
+     $sql = "SELECT * FROM texto WHERE cota = $cota";
+     $res = mysqli_query($conexion, $sql); 
+     $resul= mysqli_fetch_assoc($res);          
+    }
+?>
+
 <!DOCTYPE html>
 <html> 
 <head> 
@@ -30,33 +44,44 @@
                       <th>TITULO</th>
                       <th>AUTOR </th>
                       <th>CATEGORIA </th>
-                      <th>Eliminar</th>
                       <th>Modificar</th>
+                     
+                      </th>
                     </thead>  
                   <tbody>
                     <?php
                       require_once ('../../consultas/conexion.php');
-                      $sql = "SELECT * FROM texto order by cota";
+                      $sql = "SELECT a.*, b.nombre, d.nombre AS categoria FROM texto a INNER JOIN autor b ON a.autor = b.id INNER JOIN divisiones c ON a.categoria = c.id INNER JOIN categoria d ON c.categoria = d.id order by cota";
                       $res = mysqli_query($conexion, $sql);
-                      while ($row = mysqli_fetch_array($res)){ ?>
+                      while ($row = mysqli_fetch_array($res)){ 
+
+                        ?>
                         <tr>
-                          <td> <?= $row[0]?> </td>
-                          <td> <?= $row[1]?> </td>
-                          <td> <?= $row[4]?> </td>
-                          <td> <?= $row[5]?> </td>
-                          <td> <button>X</button></td>
-                          <td> <button>M</button></td>
-                        </tr>
+                          <td> <?= $row[cota]?> </td>
+                          <td> <?= $row[titulo]?> </td>
+                          <td> <?= $row[nombre]?> </td>
+                          <td> <?= $row[categoria]?> </td>
+
+                          <td> 
+
+
+                          <form action="../../public/view/texto.php" method="POST">
+                          <input type="hidden" name="cota" value="<?= $row[0]?>">
+                          <input type="submit" value="Modificar" onClick="return confirm('¿Seguro que Desea Modificar el Libro?')">
+  
+                          </form>
+                          </td>
+
 
                       <?php } ?>
 
                   </tbody>
                 </table>
-        			</article>
-      		</section>
-      		<footer>
-      			<?php require_once '../include/footer.php'; ?>
-      		</footer>
-      	</div>
+              </article>
+          </section>
+          <footer>
+            <?php require_once '../include/footer.php'; ?>
+          </footer>
+        </div>
 </body>
 </html>

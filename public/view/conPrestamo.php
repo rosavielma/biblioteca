@@ -30,21 +30,23 @@
                       <th>CODIGO MATERIAL</th>
                       <th>FECHA PRESTAMO</th>
                       <th>FECHA DEVOLUCIÓN</th>
-                      <th>Eliminar</th>
+                      
                     </tr>
                   </thead>  
                   <tbody>
+
+                  
                     <?php
                       require_once ('../../consultas/conexion.php');
                       $sql = "SELECT * FROM prestamo order by fecha_prestamo";
                       $res = mysqli_query($conexion, $sql);
                       while ($row = mysqli_fetch_array($res)){ ?>
                         <tr>
-                          <td> <?= $row[0]?> </td>
-                          <td> <?= $row[3]?> </td>
-                          <td> <?= $row[1]?> </td>
-                          <td> <?= $row[2]?> </td>
-                          <td> <button>x</button> </td>
+                          <td> <?= $row[cedula]?> </td>
+                          <td> <?= $row[cota]?> </td>
+                          <td> <?= $row[fecha_prestamo]?> </td>
+                          <td> <?= $row[fechaLimite]?> </td>
+                         
                         </tr>
                       <?php } ?>
                   </tbody>

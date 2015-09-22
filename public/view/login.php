@@ -55,7 +55,7 @@ if (isset($_POST["MM_login"]))
           </hgroup>
                 <fieldset>
                   <legend></legend>
-                    <form action="" method="POST" >
+                    <form action="" method="POST" autocomplete="off">
                   <div>
                   <label for="usuario">Usuario:</label>
                   <input id="usuario" class="form-control" type="text" name="usuario" value="">

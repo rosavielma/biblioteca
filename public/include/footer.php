@@ -1,8 +1,7 @@
 
 <ul class="PieMenu">
-	<li class="pie"><a href="#">Inicio</a></li>
-	<li class="pie"><a href="#">Galería</a></li>
+	<li class="pie"><a href="../../biblioteca/index.php">Inicio</a></li>
 	<li class="pie"><a href="#">Contactos</a></li>
-	<li class="pie"><a href="#">Ayuda</a></li>
+
 </ul>
-<small>Copyleft &copy; 2013 <a href="#">UPTM PNF-I</a> | Diseñado por <a href="#">Equipo I sección "C"</a></small>
+<small> <a href="www.uptm.edu.ve">UPTM PNFI</a> | Diseñado por <a href="#">Sección "A" T2t3 2015</a></small>

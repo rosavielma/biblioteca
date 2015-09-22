@@ -32,7 +32,7 @@
 
             <div>
                     <label for="codi">Cedula Usuario</label>
-               <input id="codi" class="form-control input-sm tu" type="text" name="usuario" value="" placeholder="Ingrese la Cedula" required>
+               <input id="codi" class="form-control input-sm tu" type="text" name="usuario" value="" title="Ingrese solo números" placeholder="Ingrese la Cedula" required pattern='^[0-9]{1,15}$'>
   
                           <a id="mas" class="btn btn-default btn-sm" href="usuarios.php">
                     <span class="glyphicon glyphicon-plus"></span>
@@ -40,8 +40,8 @@
                     </div>
 
         <div>
-                    <label for="codi">Código del Material</label>
-               <input id="codi" class="form-control input-sm tu" type="text" name="cota" value="" placeholder="Ingrese la Cedula" required>
+                    <label for="codi">Cota del Material</label>
+               <input id="codi" class="form-control input-sm tu" type="text" name="cota" value="" placeholder="Ingrese la Cota" required>
   
                           <a id="mas" class="btn btn-default btn-sm" href="texto.php" >
                     <span class="glyphicon glyphicon-plus"></span>
@@ -64,5 +64,10 @@
         </form>
         </fieldset>
         </article>
-  
       </section>
+
+    <footer>
+      <?php require_once '../include/footer.php'; ?>
+    </footer>
+</body>
+</html>

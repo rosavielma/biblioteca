@@ -48,12 +48,14 @@
 
 					       	<div>
 					                	<label for="nombre">Nombre</label>
-					                	<input id="nombre" class="form-control input-sm" type="text" name="nombre" value="<?= (isset($cedula) ? $resul['nombre'] : '') ?>" placeholder="Ingrese Nombre" title="" required> 
+					                	<input id="nombre" class="form-control input-sm" type="text" name="nombre" TITLE='Coloque solo letras' value="<?= (isset($cedula) ? $resul['nombre'] : '') ?>" placeholder="Ingrese Nombre" title=""
+					                	 required pattern='^[A-Za-záéíóúñ\s]{1,50}$' > 
 					          </div>
 
 					       	<div>
                 						<label for="apellido">Apellido</label>
-                						<input id="apellido" class="form-control input-sm" type="text" name="apellido" value="<?= (isset($cedula) ? $resul['apellido'] : '') ?>" placeholder="Ingrese su Apellido" required> 
+                						<input id="apellido" class="form-control input-sm" type="text" name="apellido"  TITLE='Coloque solo letras' value="<?= (isset($cedula) ? $resul['apellido'] : '') ?>" placeholder="Ingrese su Apellido" 
+                						required pattern='^[A-Za-záéíóúñ\s]{1,50}$' > 
             					</div>
 
 						<div>
@@ -108,7 +110,8 @@
             			<form action="../../consultas/tipoUsuario/insertar.php" method="POST">
             				<div>
 					        	<label for="nombre">Nombre</label>
-					         	<input id="nombre" class="form-control input-sm" type="text" name="nombre" value="" placeholder="Ingrese Nombre" title=""> 
+					         	<input id="nombre" class="form-control input-sm" type="text" name="nombre" value="" placeholder="Ingrese Nombre" title="'Coloque solo letras'"
+					         	required pattern='^[A-Za-záéíóúñ\s]{1,50}$' autocomplete="off"> 
 					</div>
 					<span>
 					         	<input class="btn btn-primary btn-sm" type="reset" value="borrar">

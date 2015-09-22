@@ -1,8 +1,22 @@
+<?php   
+    session_start();
+    if (!isset($_SESSION['s_usuario'])) { header("location: ../view/login.php"); }
+    if (isset($_REQUEST["cedula"]))
+      
+    {
+     require_once '../../consultas/conexion.php';
+     extract($_REQUEST);
+     $sql = "SELECT * FROM usuario WHERE cedula = $cedula";
+     $res = mysqli_query($conexion, $sql); 
+     $resul= mysqli_fetch_assoc($res);          
+    }
+?>
+
 <!DOCTYPE html>
 <html> 
 <head> 
   	<meta charset='UTF-8'>
-  	<title>Registro Usuario Sistema Bibliotecario</title> 
+  	<title>Consulta de Usuario Sistema Bibliotecario</title> 
   	<link href="css/bootstrap.min.css" rel="stylesheet">
   	<link rel="stylesheet" type="text/css" href="../assets/css/bootstrap.min.css">
   	<link rel="stylesheet" type="text/css" href="../assets/css/style.css">
@@ -41,14 +55,15 @@
                       $res = mysqli_query($conexion, $sql);
                       while ($row = mysqli_fetch_array($res)){ ?>
                         <tr>
-                          <td> <?= $row[0]?> </td>
-                          <td> <?= $row[1]?> </td>
-                          <td> <?= $row[2]?> </td>
-                          <td> <?= $row[3]?> </td>
+                          <td> <?= $row[cedula]?> </td>
+                          <td> <?= $row[nombre]?> </td>
+                          <td> <?= $row[apellido]?> </td>
+                          <td> <?= $row[tipo]?> </td>
                           <td> 
+
                           <form action="../../consultas/usuario/eliminar.php" method="POST">
                             <input type="hidden" name="cedula" value="<?= $row[0]?>">
-                            <input type="submit" value="X">
+                            <input type="submit" value="Eliminar" onClick="return confirm('¿Seguro que Desea Eliminar los Datos?')">
                           </form>
                           </td>
                           <td> 
@@ -56,7 +71,7 @@
 
                           <form action="../../public/view/usuarios.php" method="POST">
                           <input type="hidden" name="cedula" value="<?= $row[0]?>">
-                          <input type="submit" value=":)">
+                          <input type="submit" value="Modificar" onClick="return confirm('¿Seguro que Desea Modificar?')">
 
                           </form>
                           </td>

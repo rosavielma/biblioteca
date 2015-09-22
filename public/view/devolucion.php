@@ -1,3 +1,7 @@
+<?php   
+    session_start();
+    if (!isset($_SESSION['s_usuario'])) { header("location: ../view/login.php"); }
+?>
 <!DOCTYPE html>
 <html> 
 <head> 
@@ -28,24 +32,21 @@
         <article>
         <fieldset>
             <legend>Registro de Devolución</legend>
-             <form action="../../consultas/devolucion/insertar.php" method="POST" >
-
+             <form action="devo.php" method="POST" autocomplete="off">
             <div>
                     <label for="codi">Cedula Usuario</label>
-               <input id="codi" class="form-control input-sm tu" type="text" name="id" value=""
-                placeholder="Ingrese la Cedula" required autocomplete="off">
+               <input id="codi" class="form-control input-sm tu" type="number" name="cedula" value="24391784"
+                placeholder="Ingrese la Cedula" required  min="0">
   
-                          <a id="mas" class="btn btn-default btn-sm" href="#">
-                    <span class="icon-facebook"></span>
-                </a> 
                     </div>
-
-           <div id="btn">
-                <input class="btn btn-primary" type="submit" value="Buscar">
-           </div>
+                    <div>
+  <input class="btn btn-primary btn-sm" type="submit" value="Buscar"></div>
+              </form>
+           
         </form>
         </fieldset>
         </article>
   
       </section>
 
+ $sql = "SELECT * FROM usuario order by cedula";
