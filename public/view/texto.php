@@ -6,10 +6,12 @@ if (isset($_REQUEST["cota"]))
 {
 	require_once '../../consultas/conexion.php';
 	extract($_REQUEST);
-	$sql = "SELECT a.*, d.id AS categoria2, e.id AS editorial FROM texto a INNER JOIN autor b ON a.autor = b.id INNER JOIN editorial e ON b.editorial = e.id INNER JOIN divisiones c ON a.categoria = c.id INNER JOIN categoria d ON c.categoria = d.id WHERE cota = '$cota'";
-	echo($sql);
-	$res = mysqli_query($conexion, $sql); 
-	$resul = mysqli_fetch_assoc($res);
+	if (isset($cota)) 
+	{
+			$sql = "SELECT a.*, d.id AS categoria2, e.id AS editorial FROM texto a INNER JOIN autor b ON a.autor = b.id INNER JOIN editorial e ON b.editorial = e.id INNER JOIN divisiones c ON a.categoria = c.id INNER JOIN categoria d ON c.categoria = d.id WHERE cota = '$cota'";
+			$res = mysqli_query($conexion, $sql); 
+			$resul = mysqli_fetch_assoc($res);
+	}	
 }
 ?>
 <!DOCTYPE html>
@@ -39,7 +41,7 @@ if (isset($_REQUEST["cota"]))
 			<article>
 				<fieldset>
 					<legend>Registro de Libros</legend>
-					<form action="../../consultas/texto/modificar.php" method="POST" autocomplete="off">
+					<form action="../../consultas/texto/<?= (isset($cota) ? 'modificar.php' : 'insertar.php') ?>" method="POST" autocomplete="off">
 						<div>
 							<label for="cota">Cota</label>
 							<input id="cota" class="form-control input-sm" type="text"  name="cota" value="<?= $resul['cota'] ?>" placeholder="Ingrese la Cota" required >
